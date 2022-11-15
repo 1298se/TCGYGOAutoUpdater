@@ -54,5 +54,5 @@ class Card(Base):
             monster_type=card_metadata.get('MonsterType'),
             attack=card_metadata.get('Attack'),
             defense=card_metadata.get('Defense'),
-            description=card_metadata.get('Description'),
+            description=card_metadata.get('Description', "").encode("utf-8"),
         )
