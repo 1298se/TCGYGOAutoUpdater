@@ -58,6 +58,6 @@ class TCGPlayerCatalogRepository:
     def insert_skus(self, skus):
         self._insert_or_update(skus)
 
-    def _insert_or_update(self, models: list[Base]):
+    def _insert_or_update(self, models: list):
         for model in models:
             self.session.merge(model)
