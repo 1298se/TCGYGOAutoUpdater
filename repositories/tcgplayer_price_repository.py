@@ -8,7 +8,7 @@ class TCGPlayerPriceRepository:
     def __init__(self, api_service: TCGPlayerApiService):
         self.api_service: TCGPlayerApiService = api_service
 
-    async def fetch_sku_prices(self, sku_ids: list[int]):
+    async def fetch_sku_prices(self, sku_ids: list):
         response = await self.api_service.get_sku_prices(sku_ids)
         return response.get('results', [])
 
