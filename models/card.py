@@ -31,7 +31,7 @@ class Card(Base):
     skus = relationship("Sku", back_populates="card")
 
     @staticmethod
-    def parse_extended_data(extended_data: list[dict]) -> dict:
+    def parse_extended_data(extended_data: list) -> dict:
         return {data['name']: data['value'] for data in extended_data}
 
     @staticmethod

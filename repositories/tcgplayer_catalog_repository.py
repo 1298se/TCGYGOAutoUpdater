@@ -24,7 +24,7 @@ class TCGPlayerCatalogRepository:
         response = self.api_service.get_card_rarities()
         return response.get('results', [])
 
-    def fetch_card_sets(self, offset, limit) -> Optional[list[dict]]:
+    def fetch_card_sets(self, offset, limit) -> Optional[list]:
         response = self.api_service.get_sets(offset, limit)
         return response.get('results', [])
 
@@ -32,7 +32,7 @@ class TCGPlayerCatalogRepository:
         response = self.api_service.get_sets(offset=0, limit=1)
         return response.get('totalItems', 0)
 
-    def fetch_cards(self, offset, limit, set_id=None) -> Optional[list[dict]]:
+    def fetch_cards(self, offset, limit, set_id=None) -> Optional[list]:
         response = self.api_service.get_cards(offset=offset, limit=limit, set_id=set_id)
         return response.get('results', [])
 

@@ -104,7 +104,7 @@ class TCGPlayerApiService:
             params=query_params
         )
 
-    def get_sku_prices(self, sku_ids: list[int]):
+    def get_sku_prices(self, sku_ids: list):
         return _fetch_tcgplayer_resource(
             f'{TCGPLAYER_PRICING_URL}{",".join([str(sku_id) for sku_id in sku_ids])}',
             headers=self.get_authorization_headers(),

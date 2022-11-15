@@ -13,7 +13,7 @@ class DatabaseSyncWorker:
         self.catalog_repository: TCGPlayerCatalogRepository = catalog_repository
         self.session = session
 
-    def _add_updated_set_models(self, outdated_sets: list, set_responses: list[dict]):
+    def _add_updated_set_models(self, outdated_sets: list, set_responses: list):
         from models.set import Set
 
         for set_response in set_responses:
@@ -38,7 +38,7 @@ class DatabaseSyncWorker:
                 map(lambda sku_response: Sku.from_tcgplayer_response(sku_response), card_response['skus'])
             )
 
-    def _fetch_cards_in_set(self, set_id: int) -> list[dict]:
+    def _fetch_cards_in_set(self, set_id: int) -> list:
         print(set_id)
         set_card_count = self.catalog_repository.fetch_total_card_count(set_id)
         set_cards = []
