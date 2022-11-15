@@ -4,11 +4,21 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-python-dotenv = "~=0.20.0"
-apscheduler = "~=3.9.1"
-sqlalchemy = "*"
-mysqlclient = "*"
-requests = "*"
+python-dotenv = "==0.20.0"
+apscheduler = "==3.9.1.post1"
+sqlalchemy = "==1.4.44"
+mysqlclient = "==2.1.1"
+requests = "==2.27.1"
+certifi = "==2022.9.24"
+charset-normalizer = "==2.0.0"
+greenlet = "==2.0.1"
+idna = "==3.4"
+pytz-deprecation-shim = "==0.1.0.post0"
+pytz = "==2022.6"
+six = "==1.16.0"
+tzdata = "==2022.6"
+tzlocal = "==4.2"
+urllib3 = "==1.26.12"
 
 [dev-packages]
 
